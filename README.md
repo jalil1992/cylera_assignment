@@ -33,7 +33,12 @@ Additionally, you must handle the scenario where a shopper checks out and their 
 - Distribution of items
 
 ## Implementation
-
+### Files
+```
+checkoutbot/api.py
+checkoutbot/register.py
+checkoutbot/tests/test_api.py
+```
 ### RegisterSet
 
 Simulates a set of registers. By default, consists of 25 registers.
@@ -47,10 +52,10 @@ Used two additional dictionaries `register_customers` and `customer_items` to ma
 When a new item is arrived, if the customer's item was already assigned to a register we must assign the new item to that register again.
 If the customer is new, we have to pick a register and we aim to maximize the efficiency.
 
-**Method 1**
+**[Method 1](https://github.com/jalil1992/cylera_assignment/blob/c2cc49b0bc00f0a163dd90c2781aaac3b594cb50/checkoutbot/register.py#L34)**
 Whenever a new item is received, we can pick a register with the minimum number of items and use that.
 
-**Method 2**
+**[Method 2](https://github.com/jalil1992/cylera_assignment/blob/c2cc49b0bc00f0a163dd90c2781aaac3b594cb50/checkoutbot/register.py#L35)**
 Whenever a new item is received, we can pick a register with the minimum number of items and use that.
 If there are more than two registers with the minimum number of items, we choose one with the minimum customers assigned.
 
