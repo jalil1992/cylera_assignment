@@ -5,12 +5,12 @@ from asyncio.log import logger
 from flask import Flask, request
 
 from entities import AddEvent, CheckoutEvent, RegisterType
-from register import Register
+from register import RegisterSet
 
 app = Flask(__name__)
 log = logging.getLogger(__name__)
 
-register: Register = Register()
+register: RegisterSet = RegisterSet()
 
 
 @app.route("/health", methods=["GET"])
@@ -48,6 +48,7 @@ def checkout():
     except Exception as e:
         log.exception(f"Exception on checkout: {str(e)}")
         return str(e), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True)
