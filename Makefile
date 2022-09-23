@@ -31,12 +31,3 @@ generate:
 json:
 	$(VENV_PYTHON) checkoutbot/generator.py --with-checkout --to-json --dry-run
 	npx -y prettier --write *.json
-
-run:
-	python checkoutbot/api.py
-
-gen:
-	python checkoutbot/generator.py --with-checkout --customer-count 100 --item-count 1000 --event-count 500
-
-test-api:
-	set PYTHONPATH=checkoutbot && python -m pytest
